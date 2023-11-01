@@ -9,7 +9,7 @@ import { profileTabs } from "@/constants";
 import Image from "next/image";
 import ThreadsTab from "@/components/shared/ThreadsTab";
 
-async function Page({ params }: { params: { id: string } }) {
+async function Page({ params }: { params: { id: string }}) {
     const user = await currentUser();
 
     if(!user) return null;
@@ -55,7 +55,7 @@ async function Page({ params }: { params: { id: string } }) {
                     <TabsContent key={`content-${tab.label}`} value={tab.value} className="w-full text-light-1">
                         <ThreadsTab
                         currentUserId={user.id}
-                        accountId={userInfo._id}
+                        accountId={userInfo.id}
                         accountType="User"
                         />
                     </TabsContent>
